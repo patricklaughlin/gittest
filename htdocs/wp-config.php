@@ -14,6 +14,13 @@
  * @package WordPress
  */
 
+// Use these settings on the local server
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
+  include( dirname( __FILE__ ) . '/wp-config-local.php' );
+  
+// Otherwise use the below settings (on live server)
+} else {
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'gittest_kc');
@@ -33,6 +40,16 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ */
+define('WP_DEBUG', false);
+
+}
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -71,14 +88,7 @@ $table_prefix  = 'wp_';
  */
 define('WPLANG', '');
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', false);
+
 
 /* That's all, stop editing! Happy blogging. */
 
